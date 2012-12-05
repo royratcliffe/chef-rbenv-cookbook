@@ -58,6 +58,7 @@ end
 
 def build_script_environment
   script_env = { 'RBENV_ROOT' => rbenv_root }
+  script_env.merge!({ 'MAKE_OPTS' => rbenv_make_opts }) if rbenv_make_opts
   if new_resource.environment
     script_env.merge!(new_resource.environment)
   end

@@ -55,6 +55,10 @@ class Chef
           %{$RBENV_ROOT/shims/#{cmd}}
         ].join(' && ')
       end
+
+      def rbenv_make_opts
+        node['rbenv']['make_opts']
+      end
     end
   end
 end
